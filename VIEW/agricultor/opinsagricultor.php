@@ -1,6 +1,6 @@
 <?php
-   include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpadst226/DAL/agricultor.php";
-   include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpadst226/MODEL/agricultor.php";  
+   include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/DAL/agricultor.php";
+   include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/agricultor.php";  
 
    $agricultor = new MODEL\Agricultor(); 
 

@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpadst226/DAL/agricultor.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpadst226/MODEL/agricultor.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpbccphp2026/DAL/agricultor.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpbccphp2026/MODEL/agricultor.php";
 
 use DAL\Agricultor;
 
@@ -37,8 +37,8 @@ $lstAgricultor = $dalAgricultor->Select();
         <h1>Listar Agricultores</h1>
 
         <a class="btn-floating btn-small waves-effect waves-light green">
-             <i class="material-icons"
-                onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
+            <i class="material-icons"
+                onclick="JavaScript:location.href='frmisnagricultor.php'">delete</i>
         </a>
         <br />
         <br />
@@ -49,6 +49,7 @@ $lstAgricultor = $dalAgricultor->Select();
                 <th>CIDADE</th>
                 <th>BAIRRO</th>
                 <th>IDADE</th>
+                <th>Operações</th>
             </tr>
             <?php
             foreach ($lstAgricultor as $agricultor) { ?>
@@ -58,6 +59,14 @@ $lstAgricultor = $dalAgricultor->Select();
                     <td><?php echo $agricultor->getCidade(); ?></td>
                     <td><?php echo $agricultor->getBairro(); ?></td>
                     <td><?php echo $agricultor->getIdade(); ?></td>
+                    <td>
+                        <a class="btn-floating btn-small waves-effect orange">
+                            <i class="material-icons"
+                                onclick="JavaScript:location.href='frmedtagricultor.php?id='+ '<?php echo $agricultor->getID(); ?>'">edit</i>
+                        </a>
+
+                    </td>
+
                 </tr>
 
             <?php  } ?>
