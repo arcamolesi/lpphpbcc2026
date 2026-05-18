@@ -19,7 +19,7 @@
 
 <body class="teal lighten-4">
     <div class="container deep-orange lighten-1 col s12 ">
-        <div class="row center light-blue darken-3 white-text col s12">
+        <div class="center light-blue darken-3 white-text col s12">
             <h3>Inserir Agricultor</h3>
         </div>
 

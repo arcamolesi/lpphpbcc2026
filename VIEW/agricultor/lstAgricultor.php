@@ -1,6 +1,6 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'] . "/lpbccphp2026/DAL/agricultor.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/lpbccphp2026/MODEL/agricultor.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/DAL/agricultor.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/agricultor.php";
 
 use DAL\Agricultor;
 
@@ -38,7 +38,7 @@ $lstAgricultor = $dalAgricultor->Select();
 
         <a class="btn-floating btn-small waves-effect waves-light green">
             <i class="material-icons"
-                onclick="JavaScript:location.href='frmisnagricultor.php'">delete</i>
+                onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
         </a>
         <br />
         <br />
@@ -65,8 +65,17 @@ $lstAgricultor = $dalAgricultor->Select();
                                 onclick="JavaScript:location.href='frmedtagricultor.php?id='+ '<?php echo $agricultor->getID(); ?>'">edit</i>
                         </a>
 
-                    </td>
+                        <a class="btn-floating btn-small waves-effect blue">
+                            <i class="material-icons"
+                                onclick="JavaScript:location.href='frmdetagricultor.php?id= ' + '<?php echo $agricultor->getID(); ?>'">details</i>
+                        </a>
 
+                        <a class="btn-floating btn-small waves-effect red">
+                            <i class="material-icons"
+                                onclick="JavaScript: remover( <?php echo $agricultor->getId(); ?> )">delete</i>
+                        </a>
+
+                    </td>
                 </tr>
 
             <?php  } ?>
@@ -76,3 +85,11 @@ $lstAgricultor = $dalAgricultor->Select();
 </body>
 
 </html>
+
+<script>
+    function remover(id) {
+        if (confirm('Excluir Agricultor ' + id + '?')) {
+            location.href = 'opremagricultor.php?id=' + id;
+        }
+    }
+</script>

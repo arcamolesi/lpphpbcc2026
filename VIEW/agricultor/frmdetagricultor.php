@@ -1,4 +1,5 @@
 <?php
+
 $id = $_GET['id'];
 //    echo $id; 
 
@@ -10,7 +11,8 @@ use DAL\Agricultor;
 $dalAgricultor = new DAL\Agricultor();
 $agricultor = $dalAgricultor->SelectById($id);
 
-echo $agricultor->getNome();
+//echo $agricultor->getNome();
+
 ?>
 
 
@@ -30,13 +32,13 @@ echo $agricultor->getNome();
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Agricultor</title>
+    <title>Detalhes de Agricultor</title>
 </head>
 
 <body class="teal lighten-4">
     <div class="container deep-orange lighten-1 col s12 ">
         <div class="center light-blue darken-3 white-text col s12">
-            <h3>Editar Agricultor</h3>
+            <h3>Informações de Agricultor</h3>
         </div>
 
 
@@ -45,46 +47,40 @@ echo $agricultor->getNome();
                 <div class="input-field col s8">
                     <label for="id" class="black-text bold">ID: <?php echo $agricultor->getID() ?>
                     </label>
-                    </br></br>
                     <input type="hidden" name="id" value=<?php echo $id; ?>>
                 </div>
 
                 <div class="input-field col s8">
-                    <input placeholder="Informar o nome do agricultor" id="nome"
-                        name="nome" type="text" class="validate"
-                        value="<?php echo $agricultor->getNome(); ?>">
-                    <label for="nomelabel">Nome: </label>
+                    <label for="nomelabel" class="black-text bold">Nome: <?php echo $agricultor->getNome() ?> </label>
                 </div>
 
                 <div class="input-field col s8">
-                    <input placeholder="Informar a cidade" id="cidade"
-                        name="cidade" type="text" class="validate"
-                        value="<?php echo $agricultor->getCidade(); ?>">
-                    <label for="cidadelabel">Cidade: </label>
+                    <label for="cidadelabel" class="black-text bold">Cidade: <?php echo $agricultor->getCidade() ?></label>
                 </div>
 
                 <div class="input-field col s8">
-                    <input placeholder="Informar o bairro" id="bairro"
-                        name="bairro" type="text" class="validate"
-                        value="<?php echo $agricultor->getBairro(); ?>">
-                    <label for="bairrolabel">Bairro: </label>
+
+                    <label for="bairrolabel" class="black-text bold">Bairro: <?php echo $agricultor->getBairro() ?></label>
                 </div>
 
                 <div class="input-field col s8">
-                    <input placeholder="Informar a idade" id="idade"
-                        name="idade" type="text"
-                        value="<?php echo $agricultor->getIdade(); ?>">
-                    <label for="idaddelabel">Idade: </label>
+                    <label for="idaddelabel" class="black-text bold">Idade: <?php echo $agricultor->getIdade() ?></label>
                 </div>
 
                 <div class="row center col s8">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Salvar
-                        <i class="material-icons right">send</i>
-                    </button>
-
                     <a class="waves-effect waves-light blue btn"
                         onclick="JavaScript:location.href='lstagricultor.php'">
                         <i class="material-icons right">arrow_back</i>Voltar
+                    </a>
+
+                    <a class="waves-effect waves-light orange btn"
+                        onclick="JavaScript:location.href='frmedtagricultor.php?id='+ '<?php echo $agricultor->getID(); ?>'">
+                        <i class="material-icons right">edit</i>Editar
+                    </a>
+
+                    <a class="waves-effect waves-light red btn"
+                        onclick="JavaScript: remover( <?php echo $agricultor->getId(); ?> )">
+                        <i class="material-icons right">delete</i>Remover
                     </a>
                 </div>
             </form>
@@ -97,3 +93,11 @@ echo $agricultor->getNome();
 </body>
 
 </html>
+
+<script>
+    function remover(id) {
+        if (confirm('Excluir Agricultor ' + id + '?')) {
+            location.href = 'opremagricultor.php?id=' + id;
+        }
+    }
+</script>

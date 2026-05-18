@@ -1,7 +1,8 @@
 <?php
-   namespace DAL; 
-   use PDO; 
-   
+    namespace DAL; 
+
+    use PDO; 
+    
     class Conexao {
         private static $dbNome = 'agro'; 
         private static $dbHost = 'localhost';

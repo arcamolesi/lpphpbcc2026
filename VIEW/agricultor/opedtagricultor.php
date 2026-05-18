@@ -3,7 +3,7 @@
    include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/agricultor.php";  
 
    $agricultor = new MODEL\Agricultor(); 
-
+   $agricultor->setId($_POST['id']);
    $agricultor->setNome($_POST['nome']);
    $agricultor->setCidade($_POST['cidade']); 
    $agricultor->setBairro($_POST['bairro']);
@@ -11,7 +11,7 @@
 
 
   $dalAgricultor = new DAL\Agricultor(); 
-  $dalAgricultor->Insert($agricultor); 
+  $dalAgricultor->Update($agricultor); 
 
   header("location: lstagricultor.php");
 
