@@ -1,3 +1,8 @@
+<?php
+    include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/VIEW/menu.php";  
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
