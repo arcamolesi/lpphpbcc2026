@@ -23,10 +23,10 @@
     <title>Página HOME</title>
 </head>
 
-<body class="container brown darken-2 white-text">
-    <div class="container brown darken-2 white-text">
+<body class="brown darken-2 white-text">
+    <div class="brown darken-2 white-text center">
         </br>
-        <h1>SISTEMA GESTÃO AGRÍCOLA</h1>
+        <h1>Sistema Gestão Agrícola</h1>
         </BR>
         <div>
            <img class="center" width="800" src="../IMAGES/agro.jpeg">

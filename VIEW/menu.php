@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!isset($_SESSION['login']))
+    header("Location: /lpphpbcc2026/view/index.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -40,6 +46,9 @@
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/lpphpbcc2026/VIEW/home.php">HOME</a></li>
                 <li><a href="/lpphpbcc2026/VIEW/agricultor/lstAgricultor.php">AGRICULTOR</a></li>
+                <li><a href="/lpphpadst226/view/logout.php">Logout</a></li>
+                <li style="font-weight: bold; color: teal lighten-3">Usuário: <?php echo $_SESSION['login']; ?></li>
+
 
             </ul>
 
@@ -47,9 +56,9 @@
                 <li>
                     <div class="user-view deep-orange lighten-1 white-text">
                         <div class="background white-text ">
-                            <img src="../images/fema.jpeg">
+                            <img src="../images/logoagro.jpeg" width="180" height="60">
                         </div>
-                        <a href="https:www.fema.edu.br"><img src="../images/fema.jpeg"></a>
+                        <a href="https:www.fema.edu.br"><img src="../images/logoagro.jpeg" width="250" height="80"></a>
                         <a href="#name"><span class="white-text name">Almir Camolesi</span></a>
                         <a href="#email"><span class="white-text email">camolesi@fema.edu.br</span></a>
                     </div>

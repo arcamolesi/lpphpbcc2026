@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25/04/2026 às 02:22
+-- Tempo de geração: 31/05/2026 às 06:14
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -37,6 +37,14 @@ CREATE TABLE `agricultor` (
   `bairro` varchar(20) NOT NULL,
   `idade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `agricultor`
+--
+
+INSERT INTO `agricultor` (`id`, `nome`, `cidade`, `bairro`, `idade`) VALUES
+(1, 'Almir Camolesi', 'Candido Mota', 'Queixada', 54),
+(8, 'Felipe', 'Cruzália', '6', 45);
 
 -- --------------------------------------------------------
 
@@ -88,6 +96,27 @@ INSERT INTO `tipoinsumo` (`id`, `descricao`) VALUES
 (1, 'Adubo'),
 (2, 'Semente');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `usuario`
+--
+
+DROP TABLE IF EXISTS `usuario`;
+CREATE TABLE `usuario` (
+  `id` int(11) NOT NULL,
+  `login` varchar(10) NOT NULL,
+  `senha` varchar(32) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id`, `login`, `senha`) VALUES
+(1, 'camolesi', '49ff458a05a1740d102707a89fa348ea'),
+(2, 'samuca', '49ff458a05a1740d102707a89fa348ea');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -120,6 +149,12 @@ ALTER TABLE `tipoinsumo`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -127,7 +162,7 @@ ALTER TABLE `tipoinsumo`
 -- AUTO_INCREMENT de tabela `agricultor`
 --
 ALTER TABLE `agricultor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `areaplantio`
@@ -145,6 +180,12 @@ ALTER TABLE `insumo`
 -- AUTO_INCREMENT de tabela `tipoinsumo`
 --
 ALTER TABLE `tipoinsumo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de tabela `usuario`
+--
+ALTER TABLE `usuario`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --

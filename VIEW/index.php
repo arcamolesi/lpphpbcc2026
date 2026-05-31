@@ -8,15 +8,15 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://cdn3.iconfinder.com/data/icons/happily-colored-snlogo/128/medium.png">
+    <link rel="icon" href="/lpphpbcc2026/images/logoagro.jpeg">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <title>Login!</title>
 
     <link href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
 
-    <title>Login!</title>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -25,7 +25,9 @@
 </head>
 
 <body>
+
     <div class="had-container">
+
         <div class="parallax-container logueo">
             <div class="parallax"><img src="/lpphpbcc2026/images/logoagro.jpeg"></div>
             <div class="row"><br>
@@ -33,19 +35,19 @@
                     <h4 class="truncate bg-card-user">
                         <img src="/lpphpbcc2026/images/logoagro.jpeg" alt="" class="circle responsive-img">
                         <div class="row login">
-                            <h4>Acesso Administrativo</h4>
-                             <form method="POST" action="login.php" class="col s12">
+                            <h4>Controle de Acesso</h4>
+                            <form action="login.php" method="POST" class="col s12">
                                 <div class="row">
                                     <div class="input-field col m12 s12">
                                         <i class="material-icons iconis prefix">account_box</i>
-                                        <input id="icon_prefix" name="login" type="text" class="validate">
-                                        <label for="icon_prefix">Informe o apelido</label>
+                                        <input id="icon_prefix" type="text" name="login" class="validate">
+                                        <label for="icon_prefix">Apelido</label>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="input-field col m12 s12">
                                         <i class="material-icons iconis prefix">enhanced_encryption</i>
-                                        <input id="password" name="password" type="password" class="validate">
+                                        <input id="password" type="password" name="pwd" class="validate">
                                         <label for="password">Senha</label>
                                     </div>
                                 </div>
@@ -66,7 +68,7 @@
     <footer class="page-footer grey darken-4">
         <div class="footer-copyright">
             <div class="container center">
-                Copyright © 2026 - BCC System
+                Copyright © 2026 - ADS T2
             </div>
         </div>
     </footer>
