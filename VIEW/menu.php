@@ -29,7 +29,7 @@ if (!isset($_SESSION['login']))
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
-    <script src="./js/init.js"></script>
+    <script src="/lpphpbcc2026/view/js/init.js"></script>
 
 
     <title>Menu do Sistema Agro</title>
@@ -41,12 +41,13 @@ if (!isset($_SESSION['login']))
     <nav>
         <div class="nav-wrapper brown lighten-2">
             <a href="https://www.fema.edu.br" class="brand-logo right">
-                <img src="../IMAGES//logoagro.jpeg" width="200" height="65" class="materialboxed"></a>
+                <img src="/lpphpbcc2026/images/logoagro.jpeg" width="200" height="65" class="materialboxed"></a>
 
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/lpphpbcc2026/VIEW/home.php">HOME</a></li>
                 <li><a href="/lpphpbcc2026/VIEW/agricultor/lstAgricultor.php">AGRICULTOR</a></li>
-                <li><a href="/lpphpadst226/view/logout.php">Logout</a></li>
+                <li><a href="/lpphpbcc2026/VIEW/areaplantio/lstplantio.php">PLANTIO</a></li>
+                <li><a href="/lpphpbcc2026/view/logout.php">Logout</a></li>
                 <li style="font-weight: bold; color: teal lighten-3">Usuário: <?php echo $_SESSION['login']; ?></li>
 
 
@@ -56,9 +57,9 @@ if (!isset($_SESSION['login']))
                 <li>
                     <div class="user-view deep-orange lighten-1 white-text">
                         <div class="background white-text ">
-                            <img src="../images/logoagro.jpeg" width="180" height="60">
+                            <img src="/lpphpbcc2026/images/logoagro.jpeg" width="180" height="60" class="materialboxed">
                         </div>
-                        <a href="https:www.fema.edu.br"><img src="../images/logoagro.jpeg" width="250" height="80"></a>
+                        <a href="https:www.fema.edu.br"><img src="/lpphpbcc2026/images/logoagro.jpeg" width="250" height="80"></a>
                         <a href="#name"><span class="white-text name">Almir Camolesi</span></a>
                         <a href="#email"><span class="white-text email">camolesi@fema.edu.br</span></a>
                     </div>

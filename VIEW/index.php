@@ -21,19 +21,19 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="lpphpbcc2026/view/css/style.css">
 </head>
 
 <body>
 
-    <div class="had-container">
+    <div class="had-container teal lighten-4" >
 
         <div class="parallax-container logueo">
-            <div class="parallax"><img src="/lpphpbcc2026/images/logoagro.jpeg"></div>
+  
             <div class="row"><br>
                 <div class="col m8 s8 offset-m2 offset-s2 center">
                     <h4 class="truncate bg-card-user">
-                        <img src="/lpphpbcc2026/images/logoagro.jpeg" alt="" class="circle responsive-img">
+                        <img src="/lpphpbcc2026/images/logoagro.jpeg"  height="60" width="200" class="circle responsive-img">
                         <div class="row login">
                             <h4>Controle de Acesso</h4>
                             <form action="login.php" method="POST" class="col s12">
@@ -54,6 +54,7 @@
                                 <div class="row">
                                     <button class="btn waves-effect waves-light" type="submit" name="action">Acessar</button>
                                 </div>
+                                <br>
                             </form>
                         </div>
                     </h4>
@@ -68,7 +69,7 @@
     <footer class="page-footer grey darken-4">
         <div class="footer-copyright">
             <div class="container center">
-                Copyright © 2026 - ADS T2
+                Copyright © 2026 - BCC
             </div>
         </div>
     </footer>
@@ -76,7 +77,8 @@
     <!-- jQuery first, then Bootstrap JS. -->
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <script src="mySpxript.js"></script>
+    <script src="/lpphpbcc2026/view/js/init.js"></script>
+    <script src="/lpphpbcc2026/view/js/mySpxript.js"></script>
 </body>
 
 </html>

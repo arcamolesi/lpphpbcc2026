@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 31/05/2026 às 06:14
+-- Tempo de geração: 01/06/2026 às 22:30
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.0.30
 
@@ -61,6 +61,18 @@ CREATE TABLE `areaplantio` (
   `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- Despejando dados para a tabela `areaplantio`
+--
+
+INSERT INTO `areaplantio` (`id`, `produtor`, `insumo`, `quantidade`, `valor`) VALUES
+(1, 1, 1, 12, 2333),
+(2, 8, 2, 34, 5555),
+(3, 1, 2, 323, 44),
+(5, 8, 1, 233, 33),
+(6, 8, 2, 333, 44),
+(7, 1, 1, 10, 1666);
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +87,14 @@ CREATE TABLE `insumo` (
   `quantidade` float NOT NULL,
   `valor` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Despejando dados para a tabela `insumo`
+--
+
+INSERT INTO `insumo` (`id`, `descricao`, `tipoinsumo`, `quantidade`, `valor`) VALUES
+(1, 'Adubo 14-4-30-10', 1, 90, 10000),
+(2, 'Semente Soja', 2, 150, 200);
 
 -- --------------------------------------------------------
 
@@ -168,13 +188,13 @@ ALTER TABLE `agricultor`
 -- AUTO_INCREMENT de tabela `areaplantio`
 --
 ALTER TABLE `areaplantio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `insumo`
 --
 ALTER TABLE `insumo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `tipoinsumo`

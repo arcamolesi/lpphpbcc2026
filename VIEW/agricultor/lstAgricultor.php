@@ -1,15 +1,12 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/DAL/agricultor.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/agricultor.php";
-include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/VIEW/menu.php";  
-
-
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/VIEW/menu.php";
 
 use DAL\Agricultor;
 
-$dalAgricultor = new DAL\Agricultor();
-$lstAgricultor = $dalAgricultor->Select();
-
+ $dalAgricultor = new DAL\Agricultor();
+ $lstAgricultor = $dalAgricultor->Select();
 
 ?>
 
@@ -39,11 +36,6 @@ $lstAgricultor = $dalAgricultor->Select();
     <div>
         <h1>Listar Agricultores</h1>
 
-        <a class="btn-floating btn-small waves-effect waves-light green">
-            <i class="material-icons"
-                onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
-        </a>
-        <br />
         <br />
         <table class="striped responsive-table hover: lime lighten-3">
             <tr>
@@ -52,7 +44,10 @@ $lstAgricultor = $dalAgricultor->Select();
                 <th>CIDADE</th>
                 <th>BAIRRO</th>
                 <th>IDADE</th>
-                <th>Operações</th>
+                <th>        <a class="btn-floating btn-small waves-effect waves-light green">
+            <i class="material-icons"
+                onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
+        </a></th>
             </tr>
             <?php
             foreach ($lstAgricultor as $agricultor) { ?>
