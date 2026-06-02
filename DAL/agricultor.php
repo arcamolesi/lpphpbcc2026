@@ -51,6 +51,31 @@ class Agricultor
       return  $agricultor;
    }
 
+      public function SelectByNome(string $nome)
+   {
+      $sql = "Select * from agricultor where nome like ?;";
+      $con = Conexao::conectar();
+      $query = $con->prepare($sql);
+      $query->execute(['%' . $nome . '%']);
+      $registros = $query->fetchAll(\PDO::FETCH_ASSOC);
+      $con = Conexao::desconectar();
+
+      $lstAgricultor = [];
+      foreach ($registros as $linha) {
+         $agricultor = new \MODEL\Agricultor();
+         $agricultor->setId($linha['id']);
+         $agricultor->setNome($linha['nome']);
+         $agricultor->setBairro($linha['bairro']);
+         $agricultor->setCidade($linha['cidade']);
+         $agricultor->setIdade($linha['idade']);
+
+         $lstAgricultor[] = $agricultor;
+      }
+
+      return $lstAgricultor;
+   }
+
+
 
    public function Insert(\MODEL\Agricultor $agricultor)
    {

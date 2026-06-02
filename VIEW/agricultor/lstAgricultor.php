@@ -5,8 +5,16 @@ include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/VIEW/menu.php";
 
 use DAL\Agricultor;
 
- $dalAgricultor = new DAL\Agricultor();
- $lstAgricultor = $dalAgricultor->Select();
+$dalAgricultor = new DAL\Agricultor();
+
+if (isset($_GET['busca_nome']) && !empty($_GET['busca_nome'])) {
+    $termo = $_GET['busca_nome'];
+    $lstAgricultor = $dalAgricultor->SelectByNome($termo);
+} else {
+    $termo = "";
+    $lstAgricultor = $dalAgricultor->Select();
+}
+
 
 ?>
 
@@ -36,7 +44,18 @@ use DAL\Agricultor;
     <div>
         <h1>Listar Agricultores</h1>
 
-        <br />
+        <div class="row lime lighten-3 black-text">
+            <form action="lstagricultor.php" method="get" class="col s12">
+                <div class="input-field col s12">
+                    <input id="search" type="search" name="busca_nome" class="col s6">
+                    <label for="icon_prefix"> Filtrar por nome...</label>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Filtrar
+                        <i class="material-icons right">search</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+
         <table class="striped responsive-table hover: lime lighten-3">
             <tr>
                 <th>ID</th>
@@ -44,10 +63,10 @@ use DAL\Agricultor;
                 <th>CIDADE</th>
                 <th>BAIRRO</th>
                 <th>IDADE</th>
-                <th>        <a class="btn-floating btn-small waves-effect waves-light green">
-            <i class="material-icons"
-                onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
-        </a></th>
+                <th> <a class="btn-floating btn-small waves-effect waves-light green">
+                        <i class="material-icons"
+                            onclick="JavaScript:location.href='frmisnagricultor.php'">add</i>
+                    </a></th>
             </tr>
             <?php
             foreach ($lstAgricultor as $agricultor) { ?>

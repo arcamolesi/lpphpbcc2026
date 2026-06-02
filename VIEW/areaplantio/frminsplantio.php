@@ -2,9 +2,16 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/VIEW/menu.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/DAL/agricultor.php";
 include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/agricultor.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/DAL/insumo.php";
+include_once $_SERVER['DOCUMENT_ROOT'] . "/lpphpbcc2026/MODEL/insumo.php";
 
-$dalAgricultor = new \DAL\Agricultor(); 
-$lstAgricultor = $dalAgricultor->Select(); 
+
+$dalAgricultor = new \DAL\Agricultor();
+$lstAgricultor = $dalAgricultor->Select();
+
+$dalInsumo = new \DAL\Insumo(); 
+$lstInsumo = $dalInsumo->Select(); 
+
 
 ?>
 
@@ -26,9 +33,9 @@ $lstAgricultor = $dalAgricultor->Select();
 
 
     <!-- Compiled and minified JavaScript -->
-     
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <script src="/lpphpbcc2026/view/js/init.js"></script>
 
     <meta charset="UTF-8">
@@ -44,27 +51,36 @@ $lstAgricultor = $dalAgricultor->Select();
 
 
         <div class="row grey lighten-2 black-text">
-            <form action="opinsplantio.php" method="post" class="row col s10">
+            <form action="opinsplantio.php" method="POST" class="row col s10">
                 <div class="input-field col s8">
-                    <select id="produtor" name="produtor" text-black>   
-                        <option value="" disabled selected>Escolha</option>
-
-                        <?php 
-                            foreach ($lstAgricultor as $agricultor){?>
-                                <option value= "<?php echo $agricultor->getId()?>">
-                                    <?php echo $agricultor->getNome();?></option>
-                            <?php }
+                    <select id="produtor" name="produtor" class="text-black">
+                        <option value="" disabled selected>Escolha um Produtor...</option>
+                        <?php
+                        foreach ($lstAgricultor as $agricultor) {
                         ?>
-
+                            <option value="<?php echo $agricultor->getId(); ?>">
+                                <?php echo $agricultor->getNome(); ?> </option>
+                        <?php
+                        }
+                        ?>
                     </select>
-                    <label>Agricultor/Produtor</label>
+                    <label>Produtor/Agricultor</label>
                 </div>
 
                 <br>
                 <div class="input-field col s8">
-                    <input placeholder="Informar o ID do insumo" id="insumo"
-                        name="insumo" type="number" class="validate">
-                    <label for="insumolabel">Insumo (ID): </label>
+                    <select id="insumo" name="insumo" class="text-black">
+                        <option value="" disabled selected>Escolha um Insumo...</option>
+                        <?php
+                        foreach ($lstInsumo as $insumo) {
+                        ?>
+                            <option value="<?php echo $insumo->getId(); ?>">
+                                <?php echo $insumo->getDescricao(); ?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                    <label>Insumo</label>
                 </div>
 
                 <div class="input-field col s8">
